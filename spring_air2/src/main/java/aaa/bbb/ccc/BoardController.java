@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import aaa.bbb.ccc.DAO.MemberDAO;
-import aaa.bbb.ccc.Info.MemberInfo;
+import aaa.bbb.ccc.Info.BoardInfo;
 import aaa.bbb.ccc.VO.BoardVO;
 import aaa.bbb.ccc.VO.MemberVO;
 
@@ -32,9 +32,8 @@ import aaa.bbb.ccc.VO.MemberVO;
 @Controller
 public class BoardController {
 	@Inject
-	MemberInfo memberInfo;
-	@Inject
-	MemberDAO memberDAO;
+	BoardInfo boardInfo;
+
 
 	
 	
@@ -52,10 +51,10 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/boardmain.do", method = RequestMethod.GET)
-	public String boardlist(Model model, BoardVO boardvo) {
+	public String boardlist(Model model) throws Exception {
 		logger.info("계시판 컨트롤러");
 		
-		model.addAttribute("boardvo", boardvo);
+		model.addAttribute("boardVO", boardInfo.listAll());
 		System.out.println(model);
 		
 		return "board/boardmain";

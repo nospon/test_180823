@@ -11,9 +11,9 @@
 <body>
 계시판으로 이동 성공<br>
 
-${boardvo.board_num}<br>
-${boardvo.id}<br>
-${boardvo.name}<br>
+${boardVO.board_num}<br>
+${boardVO.id}<br>
+${boardVO.name}<br>
 
 </body>
 </html>
