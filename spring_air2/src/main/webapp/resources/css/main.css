@@ -1,0 +1,409 @@
+
+
+body {
+	width:1200px;
+	margin: 0 auto;
+}
+
+.header {
+		
+	background: #fe7088;
+	width:1200px;
+	height: 30px;	
+	text-align: right;
+	
+}
+
+.header>.header_line {
+	display:inline-block;
+	overflow:hidden;
+	width:1px;
+	height:12px;
+	margin:2px;
+	background:#F5F4F1;
+	color:#F5F4F1;
+	vertical-align:middle;
+}
+
+.header a{
+	text-decoration: none;
+	color: #F5F4F1;
+	vertical-align: middle;
+	font-size: 13px;
+}
+
+
+.header>ul>li {
+	list-style: none;
+	display: inline-block;	
+}
+
+
+/*-----nav -----*/
+
+.nav {
+width:1200px;
+}
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+
+/*메뉴바 속성 백그라운드, bottom 선 색상 수정 가능*/
+.navbar {
+    overflow: hidden;
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100px;
+    border-bottom: 3px solid #fe7088;
+    width: 100%;
+    
+    
+}
+
+
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    padding: 6px 20px;
+    text-decoration: none;
+}
+
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown-content{  
+	
+	margin-top: -18px; /*하위메뉴가 달라붙어서 마진 으로 해결*/
+	
+}
+
+
+/*드랍다운*/
+.dropdown .dropbtn,.navbar_home a{
+    font-size: 16px;    
+    border: none;
+    outline: none;   
+    color: #252D2E;    
+    padding: 15px 90px;
+    background-color: inherit;
+    font: inherit;
+    margin: 0; 
+}
+
+
+
+
+/*메뉴바 클릭후 색상변경 속성*/
+.navbar a:hover, .dropdown:hover .dropbtn {
+    color: #fe5674; 
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;    
+    width: 100%;
+    left: 0;
+    z-index: 13;   
+}
+
+.dropdown-content .menu_header {
+    background: #F3F4F6;
+    padding: 16px;
+    height: 200px; 
+    width: 100%;
+    color: white;
+    margin-top: 49.2px;
+   
+	
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    
+}
+
+
+
+#table { 
+	display: table; width: 100%; 
+	float: left; margin-left:635px; 
+	
+}  /*635px은 하위메뉴 위치 조정하는 거임 : 항공권 예매 위치*/
+.row {
+display: table-row; 
+
+}
+
+.row a{
+text-decoration: none;
+color: #252D2E;
+font-size:14px;
+font-weight: bold;
+
+}
+
+.row a:hover{
+color: #fe7088;
+}
+
+.cell {display: table-cell;}
+.col1 {width: 17%;} /*17은 하위메뉴 위치 조정하는 거임 : 마이페이지 위치*/
+.col2 {width: 17.5%;} /*17.5은 하위메뉴 위치 조정하는 거임 : 기타페이지 위치*/
+
+
+
+/*-----content -----*/
+/*----- content 1  -----*/
+
+.con1{
+	
+}
+
+
+/*----- content 1 상단 메뉴바 -----*/
+
+#content {
+float:left;
+width:100%;
+}
+
+#menubar{
+	width: 278px;
+	height: 367px;
+	background-color: rgba(74,91,94,0.4); /* 맨끝 1로 투명도 조절*/	
+	position: absolute;  	  
+	z-index: 3; 	
+	transform: translateX(360px);		
+}
+
+
+
+/*----- content 2 시작 -----*/
+
+* {box-sizing: border-box}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/*----- (끝) -----*/
+
+
+
+
+
+
+/*----- content3 -----*/
+.con3>h2 {
+	text-align: center;	
+}
+
+.con3 a{
+	text-decoration: none;
+}
+
+.con3_border1 {
+	text-align: center;
+	display: inline-block;
+	width: 270px;
+	height: 315px;
+	border: 1px solid #C9C6B7;	
+}
+
+.con3_border2 {
+	text-align: center;
+	display: inline-block;
+	width: 270px;
+	height: 315px;
+	margin-left: 31.7px;
+	border: 1px solid #C9C6B7;	
+}
+
+
+
+.con3_font {
+	font-size: 11px;
+	color: #252D2E;
+}
+
+.con3_btn1 {
+	text-align: center;
+	display: inline-block;
+	width: 80px;
+	height: 20px;
+	border: 1.2px solid #00cc99;
+	color: #00cc99;
+	font-size: 13px;
+}
+
+.con3_btn2 {
+	text-align: center;
+	display: inline-block;
+	width: 80px;
+	height: 20px;
+	border: 1.2px solid #0066cc;
+	color: #0066cc;
+	font-size: 13px;	
+}
+
+
+/*----- content4 -----*/
+.con4 {
+	clear: both;
+	width: 100%;
+	height: 220px;
+	background: #E3E3E3;
+	font-size: 14px;	
+	
+}
+
+.con4 a{
+	
+	color: #252D2E;
+	vertical-align: middle;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.con4>ul>li {
+	list-style: none;
+	display: inline-block;
+	
+}
+
+
+.con4_bar {
+	display:inline-block;
+	overflow:hidden;
+	width:1px;height:12px;
+	margin:2px;
+	background:#252D2E;
+	color:#252D2E;
+	vertical-align:middle;
+}
+
+/*공지사항*/
+
+.notice>h2 {
+	text-align: center;
+}
+
+.notice a{
+	text-decoration: none;
+	font-size: 14px;	
+	color: #252D2E;
+}
+
+
+/*----- site map -----*/
+
+#sitemap_table {display: table; width: 32%; margin-left: 35px;}
+.sitemap_row {display: table-row;}
+
+.sitemap_row a{text-decoration: none; color: #252D2E; font-size: 14px;}
+
+
+.cell {display: table-cell; padding: 4px;}
+.col11 {width: 8%;}
+.col12 {width: 8%;}
+.col13 {width: 8%;}
+.col14 {width: 8%;}
+
+
+/*-----footer -----*/
+.footer {
+	clear: both;
+	width: 100%;
+	height: 130px;
+	background: #252D2E;
+	font-size: 12px;
+	color: #E3E3E3;	
+	
+}
+
+
+.footer_font{
+	margin-left: 32px;	
+}
+
+.footer_ul {list-style-type:none;margin:0;padding:0}
+.footer_li {float:left;}
+
