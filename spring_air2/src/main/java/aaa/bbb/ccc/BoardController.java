@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import aaa.bbb.ccc.Info.BoardInfo;
+import aaa.bbb.ccc.VO.Criteria;
+import aaa.bbb.ccc.VO.PageMaker;
 
 
 @Controller
@@ -26,11 +28,19 @@ public class BoardController {
 	
 	
 	@RequestMapping(value = "/boardmain.do", method = RequestMethod.GET)
-	public String boardlist(Model model) throws Exception {
-		logger.info("계시판 컨트롤러");
+	public String boardlist(Criteria cri,Model model) throws Exception {
+		logger.info("계시판 리스트");
 		
-		model.addAttribute("boardVO", boardInfo.listAll());
-		System.out.println(model);
+//		//전체 리스트 보는거(이걸 쓰면 수가 많으면 겁나 버벅됨)
+//		model.addAttribute("boardVO", boardInfo.listAll());
+//		System.out.println(model);
+		
+		model.addAttribute("boardVO", boardInfo.listCriteria(cri));
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(131);
+		
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "board/boardmain";
 	}

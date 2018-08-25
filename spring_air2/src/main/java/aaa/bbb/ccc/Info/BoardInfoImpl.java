@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import aaa.bbb.ccc.DAO.BoardDAO;
 import aaa.bbb.ccc.VO.BoardVO;
+import aaa.bbb.ccc.VO.Criteria;
 
 @Service
 public class BoardInfoImpl implements BoardInfo {
@@ -27,6 +28,13 @@ public class BoardInfoImpl implements BoardInfo {
 	public BoardVO read(int board_num) throws Exception {
 		// TODO Auto-generated method stub
 		return dao.read(board_num);
+	}
+
+
+	@Override
+	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.listCriteria(cri);
 	}
 
 	
