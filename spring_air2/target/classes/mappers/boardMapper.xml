@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="aaa.bbb.ccc.BoardMapper">
+<mapper namespace="aaa.bbb.ccc.mapper.BoardMapper">
 	
-
-	
+	<!-- 게시판 전체보기 -->
+	<select	id="listAll" resultType="aaa.bbb.ccc.VO.BoardVO">
+		<![CDATA[
+		select *
+		from board
+		where board_num>0 
+		order by board_num desc
+	]]>		
+	</select>
 	<!-- 계시판 상세보기 -->
 	<select	id="read" resultType="aaa.bbb.ccc.VO.BoardVO">
-		select * from member where board_num = #{board_num} 
+		select * from board where board_num = #{board_num}
 	</select>
 	
 

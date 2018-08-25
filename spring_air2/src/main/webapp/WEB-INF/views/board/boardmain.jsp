@@ -10,10 +10,14 @@
 </head>
 <body>
 계시판으로 이동 성공<br>
-
-${boardVO.board_num}<br>
-${boardVO.id}<br>
-${boardVO.name}<br>
-
+	<table>
+		<c:forEach var="boardVO" items="${boardVO }">
+			<tr>
+				<td>${boardVO.board_num }</td>
+				<td>${boardVO.id}</td>
+				<td>${boardVO.name }</td>
+			</tr>						
+		</c:forEach>
+	</table>
 </body>
 </html>

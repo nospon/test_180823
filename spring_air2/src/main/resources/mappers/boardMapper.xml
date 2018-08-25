@@ -7,7 +7,7 @@
 		<![CDATA[
 		select *
 		from board
-		where bno>0 
+		where board_num>0 
 		order by board_num desc
 	]]>		
 	</select>
