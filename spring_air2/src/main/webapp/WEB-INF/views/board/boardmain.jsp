@@ -14,8 +14,9 @@
 		<c:forEach var="boardVO" items="${boardVO }">
 			<tr>
 				<td>${boardVO.board_num }</td>
-				<td>${boardVO.id}</td>
-				<td>${boardVO.name }</td>
+				<td><a href='/board/read?board_num=${boardVO.board_num }'>${boardVO.title}</a></td>
+				<td>${boardVO.regdate }</td>
+				<td>${boardVO.viewcount }</td>
 			</tr>						
 		</c:forEach>
 	</table>

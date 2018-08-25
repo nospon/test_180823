@@ -58,6 +58,14 @@ public class LoginController {
 		return "home";
 	}
 	
+	@RequestMapping(value = "/main.do", method = RequestMethod.GET)
+	public String main(Model model) {
+		logger.info("메인 컨트롤러");
+		
+		
+		return "main/main";
+	}
+	
 	
 	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
 	public String logingo(HttpSession sesstion, MemberVO memberVO, Model model) throws Exception {

@@ -1,10 +1,14 @@
 package aaa.bbb.ccc.VO;
 
+import java.util.Date;
+
 public class BoardVO {
 	
 	int board_num;
-	String id;
-	String name;
+	String title;
+	Date regdate;
+	int viewcount;
+	
 	
 	public int getBoard_num() {
 		return board_num;
@@ -12,23 +16,33 @@ public class BoardVO {
 	public void setBoard_num(int board_num) {
 		this.board_num = board_num;
 	}
-	public String getId() {
-		return id;
+	public String getTitle() {
+		return title;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public String getName() {
-		return name;
+	public Date getRegdate() {
+		return regdate;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
+	}
+	public int getViewcount() {
+		return viewcount;
+	}
+	public void setViewcount(int viewcount) {
+		this.viewcount = viewcount;
 	}
 	
 	@Override
 	public String toString() {
-		return "BoardVO [board_num=" + board_num + ", id=" + id + ", name=" + name + "]";
+		return "BoardVO [board_num=" + board_num + ", title=" + title + ", regdate=" + regdate + ", viewcount="
+				+ viewcount + "]";
 	}
+	
+	
+	
 	
 	
 	

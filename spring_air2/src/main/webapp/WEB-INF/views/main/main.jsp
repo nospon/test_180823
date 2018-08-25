@@ -106,7 +106,7 @@ background-position: left top,left bottom;
 <div class="row">
 <span class="cell col1"><a href="#">스케줄 조회</a></span>
 <span class="cell col2"><a href="#">회원정보 수정</a></span>
-<span class="cell col3"><a href="boardmain.do">고객 센터</a></span>
+<span class="cell col3"><a href="board/boardmain.do">고객 센터</a></span>
 
 
 </div>    
@@ -131,7 +131,7 @@ background-position: left top,left bottom;
 <div class="row">
 <span class="cell col1"><a href="#">스케줄 조회</a></span>
 <span class="cell col2"><a href="#">회원정보 수정</a></span>
-<span class="cell col3"><a href="/boardmain.do">고객 센터</a></span>
+<span class="cell col3"><a href="board/boardmain.do">고객 센터</a></span>
 
 
 </div>    
@@ -158,7 +158,7 @@ background-position: left top,left bottom;
 <div class="row">
 <span class="cell col1"><a href="#">스케줄 조회</a></span>
 <span class="cell col2"><a href="#">회원정보 수정</a></span>
-<span class="cell col3"><a href="/boardmain.do">고객 센터</a></span>
+<span class="cell col3"><a href="board/boardmain.do">고객 센터</a></span>
 
 
 </div>    
@@ -378,7 +378,7 @@ for (i = 0; i < closebtns.length; i++) {
 <div class="row">
 	<span class="cell col11"><a href="#">스케줄 조회</a></span>
 	<span class="cell col12"><a href="#">회원정보 수정</a></span>
-	<span class="cell col13"><a href="/boardmain.do">고객 센터</a></span>
+	<span class="cell col13"><a href="board/boardmain.do">고객 센터</a></span>
 	<span class="cell col14"><a href="/join.do">회원가입</a></span>
 </div>
 </div><br><br>

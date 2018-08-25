@@ -1,14 +1,8 @@
 package aaa.bbb.ccc;
 
 
-import java.io.PrintWriter;
-
-import java.util.Locale;
-
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,36 +13,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import aaa.bbb.ccc.DAO.MemberDAO;
 import aaa.bbb.ccc.Info.BoardInfo;
-import aaa.bbb.ccc.VO.BoardVO;
-import aaa.bbb.ccc.VO.MemberVO;
 
 
-
-/**
- * Handles requests for the application home page.
- */
 @Controller
+@RequestMapping("/board/*")
 public class BoardController {
 	@Inject
 	BoardInfo boardInfo;
 
-
-	
-	
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	@RequestMapping(value = "/main.do", method = RequestMethod.GET)
-	public String main(Model model) {
-		logger.info("메인 컨트롤러");
-		
-		
-		return "main/main";
-	}
 	
 	@RequestMapping(value = "/boardmain.do", method = RequestMethod.GET)
 	public String boardlist(Model model) throws Exception {
@@ -60,5 +35,13 @@ public class BoardController {
 		return "board/boardmain";
 	}
 
-	
+	@RequestMapping(value="/read",method=RequestMethod.GET)
+	public void readPage(@RequestParam("board_num") int board_num,
+			Model model) throws Exception{
+		System.out.println("게시판 상세보기");
+		
+		model.addAttribute("boardVO",boardInfo.read(board_num));
+		
+		System.out.println(boardInfo.read(board_num)+ "aa");
+	}
 }
