@@ -38,7 +38,7 @@ public class TicketController {
 		TicketVO tcvo = new TicketVO();
 		tcvo = ticketdao.read();
 		System.out.println(tcvo +"확인");		
-		ticketvo=ticketdao.tkread(tcvo.getEngname());
+		ticketvo=ticketinfo.tkread(tcvo.getEngname());
 		
 		System.out.println(ticketvo);
 		

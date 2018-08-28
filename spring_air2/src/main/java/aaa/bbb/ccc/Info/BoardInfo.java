@@ -16,4 +16,10 @@ public interface BoardInfo {
 	//페이징 Criteria 사용
 	public List<BoardVO> listCriteria(Criteria cri) throws Exception; 
 	
+	//페이징 Criteria 사용2 밑에 계시판 페이징 리스트 전부를 싹다 가지고옴 1번껀 131 개로 고정해놔서 몇개 밖에 안나왔었음
+	public int listCountCriteria(Criteria cri) throws Exception;
+	
+	//조회수 처리
+	
+	
 }

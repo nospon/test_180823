@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
 <html>
@@ -12,12 +13,12 @@
 계시판으로 이동 성공<br>
 <div>
 	<table>
-		<c:forEach var="boardVO" items="${boardVO }">
+		<c:forEach var="boardVO" items="${list }">
 			<tr>
 				<td>${boardVO.board_num }</td>
 				<td><a href='/board/read?board_num=${boardVO.board_num }'>${boardVO.title}</a></td>
-				<td>${boardVO.regdate }</td>
-				<td>${boardVO.viewcount }</td>
+				<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${boardVO.regdate }"/></td>
+				<td><span>${boardVO.viewcount }</span></td>
 			</tr>						
 		</c:forEach>
 	</table>
@@ -25,17 +26,17 @@
 
 <div>
 		<c:if test="${pageMaker.prev}">
-			<li><a href="boardmain?page=${pageMaker.startPage - 1}">&laquo;</a></li>
+			<li><a href="${pageMaker.makeQuery(pageMaker.startPage-1) } ">[이전]</a></li>
 		</c:if>
 		
 		<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage }" var="idx">
 			<li <c:out value="${pageMaker.cri.page==idx?'class=active':'' }"/>>
-					<a href="boardmain?page=${pageMaker.makeQuery(idx) }">${idx }</a>
+					<a href="${pageMaker.makeQuery(idx) }">${idx }</a>
 			</li>
 		</c:forEach>
 		
 		<c:if test="${pageMaker.next && pageMaker.endPage>0 }">
-			<li><a href="boardmain?page=${pageMaker.makeQuery(pageMaker.endPage+1) }">[다음]</a></li>
+			<li><a href="${pageMaker.makeQuery(pageMaker.endPage+1) }">[다음]</a></li>
 		</c:if>
 </div>
 	

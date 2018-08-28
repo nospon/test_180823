@@ -19,7 +19,7 @@ public class BoardDAOImpl implements BoardDAO{
 	private static String namespace="aaa.bbb.ccc.mapper.BoardMapper";
 	
 	
-	//전체보기
+	//전체보기(사용안함)
 	@Override
 	public List<BoardVO> listAll() throws Exception {
 		// TODO Auto-generated method stub
@@ -43,10 +43,26 @@ public class BoardDAOImpl implements BoardDAO{
 		
 		return session.selectList(namespace+ ".listPage", page);
 	}
+	
+	
 	@Override
 	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectList(namespace+".listCriteria", cri);
+	}
+	
+	
+	@Override
+	public int countPaging(Criteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace+".countPaging",cri);
+	}
+	
+	//조회수 카운팅
+	@Override
+	public void updateViewCnt(int board_num) throws Exception {
+		// TODO Auto-generated method stub
+		session.update(namespace+".updateViewCnt", board_num);
 	}
 
 
