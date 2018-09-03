@@ -14,18 +14,21 @@ public class Criteria {
 	}
 
 	public void setPage(int page) {
+		
 		if(page<=0) {
 			this.page=1;
 			return;
 		}
 		this.page = page;
 	}
-
+	
+	//method for Mybatis Sql Mapper
 	public int getPerPageNum() {
-		return perPageNum;
+		return this.perPageNum;
 	}
 
 	public void setPerPageNum(int perPageNum) {
+		
 		if(perPageNum<=0 || perPageNum>100) {
 			this.perPageNum=10;
 			return;
@@ -33,13 +36,13 @@ public class Criteria {
 		this.perPageNum = perPageNum;
 	}
 	
+	//method for Mybatis Sql Mapper
 	public int getPageStart() {
-		return (this.page-1)*perPageNum;
+		return (this.page-1) * perPageNum;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Criteria [page=" + page + ", perPageNum=" + perPageNum + "]";
 	}
-	
 }

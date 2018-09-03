@@ -5,14 +5,14 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-
 import aaa.bbb.ccc.VO.TicketVO;
+
 @Repository
 public class TicketDAOImpl implements TicketDAO {
 	
 	@Inject
 	private SqlSession session;
-	private static String namespace = "aaa.bbb.ccc.VO.TicketVO";
+	private static String namespace = "org.zerock.domain.mapper.TicketVO";
 	
 	@Override
 	public TicketVO tkread(String engname) throws Exception {

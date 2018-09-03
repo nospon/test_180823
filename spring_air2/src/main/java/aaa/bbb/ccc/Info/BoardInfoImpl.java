@@ -12,6 +12,9 @@ import aaa.bbb.ccc.DAO.BoardDAO;
 import aaa.bbb.ccc.VO.BoardVO;
 import aaa.bbb.ccc.VO.Criteria;
 
+
+
+
 @Service
 public class BoardInfoImpl implements BoardInfo {
 	

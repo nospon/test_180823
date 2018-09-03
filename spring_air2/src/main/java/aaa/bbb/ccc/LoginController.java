@@ -18,11 +18,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import  aaa.bbb.ccc.VO.LogicVO;
+import  aaa.bbb.ccc.VO.MemberVO;
+import  aaa.bbb.ccc.DAO.MemberDAO;
+import  aaa.bbb.ccc.Info.MemberInfo;
 
-import aaa.bbb.ccc.DAO.MemberDAO;
-import aaa.bbb.ccc.Info.MemberInfo;
-import aaa.bbb.ccc.VO.LogicVO;
-import aaa.bbb.ccc.VO.MemberVO;
+
 
 
 
@@ -43,30 +44,30 @@ public class LoginController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		
 		return "home";
-	}
+	}*/
 	
-	@RequestMapping(value = "/home.do", method = RequestMethod.GET)
+/*	@RequestMapping(value = "/home.do", method = RequestMethod.GET)
 	public String homego(Locale locale, Model model) {
 		logger.info("홈으로", locale);
 		
 		
 		return "home";
-	}
+	}*/
 	
-	@RequestMapping(value = "/main.do", method = RequestMethod.GET)
+/*	@RequestMapping(value = "/main.do", method = RequestMethod.GET)
 	public String main(Model model) {
 		logger.info("메인 컨트롤러");
 		
 		
 		return "main/main";
 	}
-	
+	*/
 	
 	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
 	public String logingo(HttpSession sesstion, MemberVO memberVO, Model model) throws Exception {
@@ -168,7 +169,7 @@ public class LoginController {
 		memberInfo.regist(joinyee);
 		
 		System.out.println(joinyee);
-		return "logic/joinSusessce";
+		return "main/main";
 	}
 	
 	@RequestMapping(value = "/logremove.do", method = RequestMethod.GET)
@@ -252,7 +253,7 @@ public class LoginController {
 			
 			memberInfo.modify(updateyee);
 			System.out.println("컨트롤러:"+updateyee);
-			out.println("<script>alert('수정완료'); location.href='../home.do';</script>");
+			out.println("<script>alert('수정완료'); location.href='../main.do';</script>");
 			
 		}else {
 			out.println("<script>alert('비번을 다시 입력해주세요'); history.go(-1); </script>");

@@ -1,6 +1,5 @@
 package aaa.bbb.ccc.DAO;
 
-
 import aaa.bbb.ccc.VO.TicketVO;
 
 public interface TicketDAO {

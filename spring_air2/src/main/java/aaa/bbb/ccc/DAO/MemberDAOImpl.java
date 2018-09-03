@@ -11,21 +11,22 @@ import org.springframework.stereotype.Repository;
 import aaa.bbb.ccc.VO.LogicVO;
 import aaa.bbb.ccc.VO.MemberVO;
 
+
 @Repository
 public class MemberDAOImpl implements MemberDAO{
 
 	@Inject
 	private SqlSession session;
-	private static String namespace = "aaa.bbb.ccc.VO.MemberVO";
+	private static String namespace = "org.zerock.domain.mapper.MemberVO";
 	
-//	회원가입
+//	ȸ������
 	@Override
 	public void create(MemberVO joinyee) throws Exception {
 		// TODO Auto-generated method stub
 		session.insert(namespace+".create", joinyee);
 	}
 
-//	회원정보 읽기
+//	ȸ������ �б�
 	@Override
 	public MemberVO read(Integer mem_num) throws Exception {
 		// TODO Auto-generated method stub
@@ -33,21 +34,21 @@ public class MemberDAOImpl implements MemberDAO{
 	}
 
 	
-//	회원정보 수정
+//	ȸ������ ����
 	@Override
 	public void update(MemberVO updateyee) throws Exception {
 		// TODO Auto-generated method stub
 		session.update(namespace+".update", updateyee);
 	}
 
-//	회원 정보 삭제
+//	ȸ�� ���� ����
 	@Override
 	public void delete(Integer mem_num) throws Exception {
 		// TODO Auto-generated method stub
 		session.delete(namespace+".delete", mem_num);
 	}
 
-//	회원 정보 다 가져오기 (미구현)
+//	ȸ�� ���� �� �������� (�̱���)
 	@Override
 	public List<MemberVO> listAll() throws Exception {
 		// TODO Auto-generated method stub
@@ -55,14 +56,14 @@ public class MemberDAOImpl implements MemberDAO{
 	}
 	
 	
-	//로그 정보삭제
+	//�α� ��������
 	@Override
 	public MemberVO logremove(String id) throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace+".remove",id);
 	}
 	
-	//로그인 비교 작업 했을떄
+	//�α��� �� �۾� ������
 	@Override
 	public MemberVO logreadPw(LogicVO lvo) throws Exception {
 		// TODO Auto-generated method stub
@@ -76,7 +77,7 @@ public class MemberDAOImpl implements MemberDAO{
 	}
 	
 	
-	//비밀번호가 맞다면 수정 및 삭제 체크 
+	//��й�ȣ�� �´ٸ� ���� �� ���� üũ 
 	@Override
 	public boolean cheakPw(String id, String pass) throws Exception {
 		// TODO Auto-generated method stub
@@ -87,7 +88,7 @@ public class MemberDAOImpl implements MemberDAO{
 		map.put("pass", pass);
 		System.out.println("dao:"+pass);
 		int count = session.selectOne(namespace+".checkPw",map);
-		System.out.println("카운트값:"+count);
+		System.out.println("ī��Ʈ��:"+count);
 		if(count == 1) {
 			result=true;
 		}

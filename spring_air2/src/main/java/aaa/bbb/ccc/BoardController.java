@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import aaa.bbb.ccc.Info.BoardInfo;
 import aaa.bbb.ccc.VO.Criteria;
-import aaa.bbb.ccc.VO.MemberVO;
 import aaa.bbb.ccc.VO.PageMaker;
+import aaa.bbb.ccc.Info.BoardInfo;
+
+
 
 
 @Controller

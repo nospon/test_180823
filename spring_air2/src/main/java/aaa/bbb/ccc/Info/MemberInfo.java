@@ -6,24 +6,28 @@ import java.util.List;
 import aaa.bbb.ccc.VO.LogicVO;
 import aaa.bbb.ccc.VO.MemberVO;
 
+
+
+
+
 public interface MemberInfo {
-		//추가
+		//�߰�
 		public void regist(MemberVO joinyee)throws Exception;
-		//읽기
+		//�б�
 		public MemberVO read(Integer mem_num)throws Exception;
-		//수정
+		//����
 		public void modify(MemberVO updateyee)throws Exception;
-		//삭제
+		//����
 		public void remove(Integer mem_num)throws Exception;
-		//리스트
+		//����Ʈ
 		public List<MemberVO> listAll()throws Exception;
 		
 		public MemberVO logremove(String id)throws Exception;
 		
-		//로그인 정보 가져오기
+		//�α��� ���� ��������
 		public MemberVO logreadPw(LogicVO lvo)throws Exception;
 		
-		//회원정보 수정 및 삭제
+		//ȸ������ ���� �� ����
 		public boolean checkPw(String id, String pass) throws Exception;
 		
 	

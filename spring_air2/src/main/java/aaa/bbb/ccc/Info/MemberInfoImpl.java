@@ -11,6 +11,8 @@ import aaa.bbb.ccc.DAO.MemberDAO;
 import aaa.bbb.ccc.VO.LogicVO;
 import aaa.bbb.ccc.VO.MemberVO;
 
+
+
 @Service
 public class MemberInfoImpl implements MemberInfo{
 	
@@ -47,7 +49,7 @@ public class MemberInfoImpl implements MemberInfo{
 		return dao.listAll();
 	}
 	
-	//회원삭제
+	//ȸ������
 	@Override
 	public MemberVO logremove(String id) throws Exception {
 		return dao.logremove(id);
@@ -55,7 +57,7 @@ public class MemberInfoImpl implements MemberInfo{
 	}
 	
 	
-	//회원 정보 수정 및 삭제 
+	//ȸ�� ���� ���� �� ���� 
 	@Override
 	public boolean checkPw(String id, String pass) throws Exception {
 		// TODO Auto-generated method stub		
