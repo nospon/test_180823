@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import aaa.bbb.ccc.VO.LogicVO;
 import aaa.bbb.ccc.VO.MemberVO;
 
 @Repository
@@ -63,13 +64,15 @@ public class MemberDAOImpl implements MemberDAO{
 	
 	//로그인 비교 작업 했을떄
 	@Override
-	public MemberVO logreadPw(String id, String pass) throws Exception {
+	public MemberVO logreadPw(LogicVO lvo) throws Exception {
 		// TODO Auto-generated method stub
-		HashMap<String,String> paramMap=new HashMap<>();
-		paramMap.put("id", id);
-		paramMap.put("pass", pass);
+//		HashMap<String,String> paramMap=new HashMap<>();
+//		paramMap.put("id", id);
+//		paramMap.put("pass", pass);
+//		String koname = null;
+//		paramMap.put("koname", koname);
 		
-		return session.selectOne(namespace+".select2",paramMap);
+		return session.selectOne(namespace+".select2",lvo);
 	}
 	
 	

@@ -29,6 +29,5 @@
 		
 		<context:component-scan base-package="aaa.bbb.ccc.DAO"></context:component-scan>
 		<context:component-scan base-package="aaa.bbb.ccc.Info"></context:component-scan>
-		<context:component-scan base-package="aaa.bbb.ccc.logicDAO"></context:component-scan>
-		<context:component-scan base-package="aaa.bbb.ccc.logicInfo"></context:component-scan>
+		
 </beans>

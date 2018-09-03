@@ -3,7 +3,7 @@ package aaa.bbb.ccc.Info;
 
 import java.util.List;
 
-
+import aaa.bbb.ccc.VO.LogicVO;
 import aaa.bbb.ccc.VO.MemberVO;
 
 public interface MemberInfo {
@@ -19,6 +19,9 @@ public interface MemberInfo {
 		public List<MemberVO> listAll()throws Exception;
 		
 		public MemberVO logremove(String id)throws Exception;
+		
+		//로그인 정보 가져오기
+		public MemberVO logreadPw(LogicVO lvo)throws Exception;
 		
 		//회원정보 수정 및 삭제
 		public boolean checkPw(String id, String pass) throws Exception;

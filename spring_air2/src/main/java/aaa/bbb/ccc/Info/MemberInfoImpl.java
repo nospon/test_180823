@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import aaa.bbb.ccc.DAO.MemberDAO;
-
+import aaa.bbb.ccc.VO.LogicVO;
 import aaa.bbb.ccc.VO.MemberVO;
 
 @Service
@@ -60,6 +60,12 @@ public class MemberInfoImpl implements MemberInfo{
 	public boolean checkPw(String id, String pass) throws Exception {
 		// TODO Auto-generated method stub		
 		return dao.cheakPw(id, pass);
+	}
+
+	@Override
+	public MemberVO logreadPw(LogicVO lvo) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.logreadPw(lvo);
 	}
 
 

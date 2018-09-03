@@ -4,7 +4,13 @@
 <html>
 <head>
  <link rel="icon" type="image/ico"  href="resources/image/main_images/Favicon.ico"/>
+ <link rel="icon" type="image/ico"  href="resources/image/main_images/Favicon.ico" sizes="192x192" />
+ <link rel="icon" type="image/ico"  href="resources/image/main_images/Favicon.ico" sizes="32x32" />
+ <link rel="icon" type="image/ico"  href="resources/image/main_images/Favicon.ico" sizes="16x16" />
+ 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes" />
 <title>Spring Air</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css" type="text/css">  
 
@@ -69,14 +75,18 @@ background-position: left top,left bottom;
 		<span class="header_line">|</span>
 		<a href="/login.do">로그인</a>
 <%}else{ %>
+		
+		${login.koname} 님
+
 		<span class="header_line">|</span>
 		<a href="/logout.do">로그아웃</a>
 <%} %>
 		<span class="header_line">|</span>
-		<a href="#">고객센터</a>
+		<a href="board/boardmain.do">고객센터</a>
 		<span class="header_line">|</span>
 		<a href="#ccc">사이트맵
 		<span class="header_line">|</span></a>&nbsp;&nbsp;
+		
 </div>
 
 
@@ -151,7 +161,7 @@ background-position: left top,left bottom;
        <div id="table">
 <div class="row">
 <span class="cell col1"><a href="#">항공권 예매</a></span>
-<span class="cell col2"><a href="#">예매내역 확인</a></span>
+<span class="cell col2"><a href="/seatlist.do">예매내역 확인</a></span>
 <span class="cell col3"><a href="#">공지사항</a></span>
 </div>
 
@@ -368,9 +378,9 @@ for (i = 0; i < closebtns.length; i++) {
 
 <div class="row">
 	<span class="cell col11"><a href="#">항공권 예매</a></span>
-	<span class="cell col12"><a href="#">예매내역 확인</a></span>
+	<span class="cell col12"><a href="/seatlist.do">예매내역 확인</a></span>
 	<span class="cell col13"><a href="#">공지사항</a></span>
-	<span class="cell col14"><a href="logic/login.do">로그인</a></span>
+	<span class="cell col14"><a href="/login.do">로그인</a></span>
 </div>
 
 
@@ -436,13 +446,15 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
-
-
-
-
-
-
-</script>      
+</script>
+<script type="text/javascript">
+$(window).bind("pageshow", function(event) { 
+	if (event.originalEvent.persisted) { 
+		window.location.reload() 
+		} 
+	});
+</script>
+      
 </body>
 </html>
 

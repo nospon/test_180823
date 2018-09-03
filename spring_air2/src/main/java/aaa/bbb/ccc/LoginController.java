@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import aaa.bbb.ccc.DAO.MemberDAO;
 import aaa.bbb.ccc.Info.MemberInfo;
+import aaa.bbb.ccc.VO.LogicVO;
 import aaa.bbb.ccc.VO.MemberVO;
 
 
@@ -84,7 +85,7 @@ public class LoginController {
 		PrintWriter out = response.getWriter();
 		
 			sesstion.invalidate();
-			out.println("<script>alert('로그아웃되었습니다.'); location.href='logic/login.do';</script>");
+			out.println("<script>alert('로그아웃되었습니다.'); location.href='login.do';</script>");
 		
 		
 	
@@ -92,28 +93,35 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "/loginSusessce.do", method = RequestMethod.POST)
-	public void loginSusess(HttpServletResponse response,String id, String pass,HttpSession sesstion,MemberVO memberVO,Model model) throws Exception {
+	public void loginSusess(HttpServletResponse response,LogicVO lvo,String id, String pass,HttpSession sesstion,MemberVO memberVO,Model model) throws Exception {
 		logger.info("로그인성공");
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		System.out.println(id);
 		System.out.println(pass);
 		
+		MemberVO vo = memberInfo.logreadPw(lvo);
+		System.out.println(vo+"sdfsds");
+		System.out.println("요청"+memberInfo.logreadPw(lvo));
 		
-			if(memberDAO.logreadPw(id, pass) ==null) {
-//			return "logic/login";
-			out.println("<script>alert('로그인정보를 확인부탁'); history.go(-1);</script>");
-			
+			if(vo != null) {
+				sesstion.setAttribute("login", vo);
+				System.out.println(sesstion.toString()+"asasa");
+				out.println("<script>alert('환영합니다.'); location.href='main.do';</script>");
+				
+				
+
 			}else {
-			out.println("<script>alert('환영합니다'); location.href='logSession.do';</script>");
+				
+			out.println("<script>alert('로그인정보를 확인부탁'); history.go(-1);</script>");
 			}
-			System.out.println(memberDAO.logreadPw(id, pass));
 			
-			memberVO=memberDAO.logreadPw(id, pass);
-			sesstion.setAttribute("login", memberVO);
-			model.addAttribute("login", memberVO);
-		
-//		return "logic/loginSusessce";
+			
+			
+			model.addAttribute("login", vo);
+			
+			System.out.println(model.addAttribute("login", vo));
+//		return "main/main";
 	}
 	
 	@RequestMapping(value = "/logSession.do", method = RequestMethod.GET)

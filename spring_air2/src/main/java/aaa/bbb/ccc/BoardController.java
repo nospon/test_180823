@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import aaa.bbb.ccc.Info.BoardInfo;
 import aaa.bbb.ccc.VO.Criteria;
+import aaa.bbb.ccc.VO.MemberVO;
 import aaa.bbb.ccc.VO.PageMaker;
 
 

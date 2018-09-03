@@ -2,6 +2,7 @@ package aaa.bbb.ccc.DAO;
 
 import java.util.List;
 
+import aaa.bbb.ccc.VO.LogicVO;
 import aaa.bbb.ccc.VO.MemberVO;
 
 
@@ -25,7 +26,7 @@ public interface MemberDAO {
 		public MemberVO logremove(String id)throws Exception;
 		
 		//로그인 정보 가져오기
-		public MemberVO logreadPw(String id, String pass)throws Exception;
+		public MemberVO logreadPw(LogicVO lvo)throws Exception;
 		
 		//수정및 삭제 를 위한 체크
 		public boolean cheakPw(String id, String pass) throws Exception;
